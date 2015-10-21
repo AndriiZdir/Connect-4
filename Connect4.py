@@ -1,11 +1,23 @@
 def initializeGrid():
+    pass
+
+def getColumn():
+    pass
 
 def newPiece():
-def checkVictory():
-def checkFull():
-def buildGrid():
-def findVacancy():
+    pass
 
+def checkVictory():
+    pass
+
+def checkFull():
+    pass
+
+def buildGrid():
+    pass
+
+def findVacancy():
+    pass
 
 
 def test_initializeGrid():
@@ -33,10 +45,16 @@ def test_newPiece():
         print grid
 
 def test_checkVictory():
-grid=[[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-row=checkVictory(grid)
-print row
+    grid=[[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],["X "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
+    #row=checkVictory(grid)
+    #print row
+
 
 def test_checkFull():
+    pass
+
 def test_buildGrid():
+    pass
+
 def find_findVacancy():
+    pass
