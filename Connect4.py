@@ -63,9 +63,9 @@ def test_checkVictory():
     print downDiag
 def test_checkFull():
     grid=[[" "," "," "," "," "," "],["X","X","O","X","O","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    checkFull(grid[1])
+    checkFull(grid,1)
     grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    checkFull(grid[2])
+    checkFull(grid,2)
     
 def test_buildGrid():
     grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
@@ -73,15 +73,26 @@ def test_buildGrid():
     grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
     buildGrid(grid)
     
-def find_findVacancy():
+def test_findVacancy():
     grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],[" "," ","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
-    vacant = findVacancy(grid[3])
-    if vacant == 1:
-        print "found it"
+    vacant = findVacancy(grid,3)
+    if vacant == True:
+        print "works when there is a vacancy"
     else:
-        print "sorry nope"
+        print "doesn't work when there is a vacancy"
+    grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
+    vacant = findVacancy(grid,3)
+    if vacant == False:
+        print "works when it is full"
+    else:
+        print "doesn't work when it is full"
+    
 
-
+test_initializeGrid
 test_checkVictory()
 test_buildGrid()
+test_checkFull()
+test_findVacancy()
+test_newPiece()
+
 
