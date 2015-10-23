@@ -4,7 +4,7 @@ def initializeGrid():
 def getColumn():
     pass
 
-def newPiece(grid,col):
+def newPiece(grid,col,piece):
     pass
 
 def checkVictory (grid):
@@ -32,20 +32,21 @@ def test_getColumn():
 
 def test_newPiece():
     grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-
-    newPiece(1,grid)
+    P1 = "X"
+    P2 = "O"
+    newPiece(grid,1,P1)
     print grid
-    newPiece(2,grid)
+    newPiece(grid,2,P2)
     print grid
-    newPiece(3,grid)
+    newPiece(grid,3,P1)
     print grid
-    newPiece(4,grid)
+    newPiece(grid,4,P2)
     print grid
-    newPiece(5,grid)
+    newPiece(grid,5,P1)
     print grid
-    newPiece(6,grid)
+    newPiece(grid,6,P2)
     print grid
-    newPiece(7,grid)
+    newPiece(grid,7,P1)
     print grid
 
 def test_checkVictory():
@@ -88,7 +89,7 @@ def test_findVacancy():
         print "doesn't work when it is full"
     
 
-test_initializeGrid
+test_initializeGrid()
 test_checkVictory()
 test_buildGrid()
 test_checkFull()
