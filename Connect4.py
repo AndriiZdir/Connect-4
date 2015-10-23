@@ -4,69 +4,84 @@ def initializeGrid():
 def getColumn():
     pass
 
-def newPiece():
+def newPiece(grid,col):
     pass
 
-def checkVictory():
+def checkVictory (grid):
     pass
 
-def checkFull():
+def checkFull(grid, col):
     pass
 
-def buildGrid():
+def buildGrid(grid):
     pass
 
-def findVacancy():
+def findVacancy(grid, col):
     pass
 
 
 
 
 def test_initializeGrid():
-	grid = initializeGrid
-	print (grid)
+    grid = initializeGrid()
+    print (grid)
 
 def test_getColumn():
-	column = getColumn
-	print (column)
+    column = getColumn()
+    print (column)
 
 def test_newPiece():
-	newPiece(1)
-        print grid
-	newPiece(2)
-        print grid
-	newPiece(3)
-        print grid
-	newPiece(4)
-        print grid
-	newPiece(5)
-        print grid
-	newPiece(6)
-        print grid
-	newPiece(7)
-        print grid
+    grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
+
+    newPiece(1,grid)
+    print grid
+    newPiece(2,grid)
+    print grid
+    newPiece(3,grid)
+    print grid
+    newPiece(4,grid)
+    print grid
+    newPiece(5,grid)
+    print grid
+    newPiece(6,grid)
+    print grid
+    newPiece(7,grid)
+    print grid
 
 def test_checkVictory():
     grid=[[" "," "," "," "," "," "],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    #row=checkVictory(grid)
-    #print row
+    row=checkVictory(grid)
+    print row
     grid=[[" "," "," "," "," "," "],[" "," ","X ","X ","X ","X "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    #col = checkVictory(grid)
-    #print col
-    grid = [[" "," "," "," "," ","X"],[" "," "," "," ","X"," "][" "," "," ","X"," "," "],[" "," ","X"," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    #upDiag = checkVictory(grid)
-    #print upDiag
+    col = checkVictory(grid)
+    print col
+    grid = [[" "," "," "," "," ","X"],[" "," "," "," ","X"," "],[" "," "," ","X"," "," "],[" "," ","X"," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
+    upDiag = checkVictory(grid)
+    print upDiag
     grid = [[" "," ","X"," "," "," "],[" "," "," ","X"," "," "],[" "," "," "," ","X"," "],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    #downDiag = checkVictory(grid)
-    #print downDiag
+    downDiag = checkVictory(grid)
+    print downDiag
 def test_checkFull():
     grid=[[" "," "," "," "," "," "],["X","X","O","X","O","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    checkFull(grid)
+    checkFull(grid[1])
     grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    checkFull(grid)
+    checkFull(grid[2])
     
 def test_buildGrid():
-    pass
-
+    grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
+    buildGrid(grid)
+    grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
+    buildGrid(grid)
+    
 def find_findVacancy():
-    pass
+    grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],[" "," ","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
+    vacant = findVacancy(grid[3])
+    if vacant == 1:
+        print "found it"
+    else:
+        print "sorry nope"
+
+
+test_checkVictory()
+test_buildGrid()
+
