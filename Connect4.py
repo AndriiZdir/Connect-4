@@ -3,17 +3,23 @@ def initializeGrid():
     return grid;
 
 def getColumn():
-    print "ayy"
+    pass
     
 def newPiece(grid,col,piece):
-    print "hello"
+    pass
 
 def checkVictory (grid):
     pass
 
-def checkFull(grid, col):
-    pass
-
+def checkFull(col):
+   # grid = initializeGrid()
+    #for space in grid[col]:
+     #   if space.find(" ") > 0:
+      #      return True;
+      #  else:
+     #       return False;
+     pass
+ 
 def buildGrid(grid):
     pass
 
