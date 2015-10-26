@@ -11,14 +11,12 @@ def newPiece(grid,col,piece):
 def checkVictory (grid):
     pass
 
-def checkFull(col):
-   # grid = initializeGrid()
-    #for space in grid[col]:
-     #   if space.find(" ") > 0:
-      #      return True;
-      #  else:
-     #       return False;
-     pass
+def checkFull(grid,col):
+    if " " in grid[col]:
+        return False;
+    else:
+        return True;
+        
  
 def buildGrid(grid):
     pass
@@ -73,9 +71,17 @@ def test_checkVictory():
     
 def test_checkFull():
     grid=[[" "," "," "," "," "," "],["X","X","O","X","O","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    checkFull(grid,1)
+    result = checkFull(grid,1)
+    if result==True:
+        print 'Passed'
+    else:
+        print "returned false when it should have returned true"
     grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    checkFull(grid,2)
+    result = checkFull(grid,1)
+    if result == False:
+        print 'Passed'
+    else:
+        print "returned true when it should have returned false"
     
 def test_buildGrid():
     grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
@@ -98,11 +104,11 @@ def test_findVacancy():
         print "doesn't work when it is full"
     
 
-test_initializeGrid()
-test_checkVictory()
-test_buildGrid()
-test_checkFull()
-test_findVacancy()
-test_newPiece()
+#test_initializeGrid()
+#test_checkVictory()
+#test_buildGrid()
+#test_checkFull()
+#test_findVacancy()
+#test_newPiece()
 
 
