@@ -3,8 +3,8 @@ def initializeGrid():
     return grid;
 
 def getColumn():
-    pass
-
+    print "ayy"
+    
 def newPiece(grid,col,piece):
     pass
 
