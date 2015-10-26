@@ -6,7 +6,7 @@ def getColumn():
     print "ayy"
     
 def newPiece(grid,col,piece):
-    pass
+    print "hello"
 
 def checkVictory (grid):
     pass
