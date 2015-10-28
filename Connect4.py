@@ -3,8 +3,18 @@ def initializeGrid():
     return grid;
 
 def getColumn():
-    pass
-    
+#help from mac to get this to work
+    column=0
+    while column == 0:
+        answer = raw_input('What column do you want between 1-7')
+        if int(answer) > 7:
+            print('Too high')
+        elif int(answer) < 1:
+            print('Too low')
+        else:
+           column = answer
+           return column;
+       
 def newPiece(grid,col,piece):
     pass
 
@@ -110,5 +120,5 @@ def test_findVacancy():
 #test_checkFull()
 #test_findVacancy()
 #test_newPiece()
-
+#test_getColumn()
 
