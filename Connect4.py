@@ -32,7 +32,13 @@ def buildGrid(grid):
     pass
 
 def findVacancy(grid, col):
-    pass
+    '''Return True if there is a vacancy in column col of grid.'''
+    if ' ' in grid[col]:   #the number in [] is the column it is looking in (0 is the first one)
+        print('There is a space')
+        return True
+    else:
+        print('No space')
+        return False
 
 
 
@@ -118,7 +124,7 @@ def test_findVacancy():
 #test_checkVictory()
 #test_buildGrid()
 #test_checkFull()
-#test_findVacancy()
+test_findVacancy()
 #test_newPiece()
 #test_getColumn()
 
