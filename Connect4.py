@@ -16,7 +16,9 @@ def getColumn():
            return column;
        
 def newPiece(grid,col,piece):
-    pass
+    #idk how to change a specific character in one list
+    grid[col] = 'X'
+    
 
 def checkVictory (grid):
     pass
@@ -33,7 +35,7 @@ def buildGrid(grid):
 
 def findVacancy(grid, col):
     '''Return True if there is a vacancy in column col of grid.'''
-    if ' ' in grid[col]:   #the number in [] is the column it is looking in (0 is the first one)
+    if ' ' in grid[col]:  
         print('There is a space')
         return True
     else:
@@ -107,13 +109,13 @@ def test_buildGrid():
     
 def test_findVacancy():
     grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],[" "," ","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
-    vacant = findVacancy(grid,3)
+    vacant = findVacancy(grid,2)
     if vacant == True:
         print "works when there is a vacancy"
     else:
         print "doesn't work when there is a vacancy"
     grid = [["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"],["X","X","X","X","X","X"]]
-    vacant = findVacancy(grid,3)
+    vacant = findVacancy(grid,2)
     if vacant == False:
         print "works when it is full"
     else:
@@ -124,7 +126,7 @@ def test_findVacancy():
 #test_checkVictory()
 #test_buildGrid()
 #test_checkFull()
-test_findVacancy()
+#test_findVacancy()
 #test_newPiece()
 #test_getColumn()
 
