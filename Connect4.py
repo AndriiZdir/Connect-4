@@ -3,7 +3,7 @@ def initializeGrid():
     return grid;
 
 def getColumn():
-#help from mac to get this to work
+    #help from mac to get this to work
     column=0
     while column == 0:
         answer = raw_input('What column do you want between 1-7')
@@ -31,7 +31,13 @@ def checkFull(grid,col):
         
  
 def buildGrid(grid):
-    pass
+    for col in range(7):
+        print
+        for row in range(6):
+            print "|"+grid[col][row]
+        print "|"
+        print "_________________________",
+
 
 def findVacancy(grid, col):
     '''Return True if there is a vacancy in column col of grid.'''
@@ -124,7 +130,7 @@ def test_findVacancy():
 
 #test_initializeGrid()
 #test_checkVictory()
-#test_buildGrid()
+test_buildGrid()
 #test_checkFull()
 #test_findVacancy()
 #test_newPiece()
