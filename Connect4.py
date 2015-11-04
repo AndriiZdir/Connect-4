@@ -31,14 +31,17 @@ def checkFull(grid,col):
         
  
 def buildGrid(grid):
-    for col in range(7):
-        print
-        for row in range(6):
-            print "|"+grid[col][row]
+    #builds the visual for the game
+    #pretty confused as to how this works, it just ended up working, and it's not too important anyways.
+    for row in range(6):
+        for col in range(7):
+            print "| " + grid[col][row],
         print "|"
-        print "_________________________",
-
-
+        print"_____________________________"
+            
+        
+    
+    
 def findVacancy(grid, col):
     '''Return True if there is a vacancy in column col of grid.'''
     if ' ' in grid[col]:  
@@ -130,7 +133,7 @@ def test_findVacancy():
 
 #test_initializeGrid()
 #test_checkVictory()
-test_buildGrid()
+#test_buildGrid()
 #test_checkFull()
 #test_findVacancy()
 #test_newPiece()
