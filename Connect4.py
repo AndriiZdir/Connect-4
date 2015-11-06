@@ -29,8 +29,26 @@ def newPiece(grid,col,piece):
 
             
 
-def checkVictory (grid):
-    pass
+def checkVictory(grid):
+    #check column
+    for col in range(7):
+        print grid[col]
+        for row in range(6):
+            x=0
+            for y in range(4):
+                if row>2:
+                    if grid[col][row] == grid[col][row-y] and grid[col][row]== "X":
+                        x+=1
+                else:
+                    if grid[col][row] == grid[col][row+y] and grid[col][row]== "X":
+                        x+=1
+                if x == 4:
+                    return True;
+    
+    
+            
+                    
+                
 
 def checkFull(grid,col):
     if " " in grid[col]:
@@ -49,8 +67,6 @@ def buildGrid(grid):
         print"_____________________________"
             
         
-    
-    
 def findVacancy(grid, col):
     '''Return True if there is a vacancy in column col of grid.'''
     if ' ' in grid[col]:  
@@ -63,6 +79,8 @@ def findVacancy(grid, col):
 
 
 
+
+    
 def test_initializeGrid():
     grid = initializeGrid()
     print (grid)
@@ -92,17 +110,18 @@ def test_newPiece():
 
 def test_checkVictory():
     grid=[[" "," "," "," "," "," "],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    row=checkVictory(grid)
-    print row
-    grid=[[" "," "," "," "," "," "],[" "," ","X ","X ","X ","X "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    col = checkVictory(grid)
-    print col
+    #row=checkVictory(grid)
+    #print row
+    grid=[[" "," "," "," "," "," "],[" "," "," ","X","X","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," ","X","X","X","X"],[" "," "," "," "," "," "]]
+    #col = checkVictory(grid)
+    #print col
     grid = [[" "," "," "," "," ","X"],[" "," "," "," ","X"," "],[" "," "," ","X"," "," "],[" "," ","X"," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    upDiag = checkVictory(grid)
-    print upDiag
+    #upDiag = checkVictory(grid)
+    #print upDiag
     grid = [[" "," ","X"," "," "," "],[" "," "," ","X"," "," "],[" "," "," "," ","X"," "],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
-    downDiag = checkVictory(grid)
-    print downDiag
+    #downDiag = checkVictory(grid)
+    #print downDiag
+    grid=[[" ","X"," ","X"," ","X"],["X"," ","X"," ","X"," "],[" ","X"," ","X"," ","X"],["X"," ","X"," ","X"," "],[" ","X"," ","X"," ","X"],["X"," ","X"," ","X"," "],[" ","X"," ","X"," ","X"]]
 
     
 def test_checkFull():
@@ -141,7 +160,7 @@ def test_findVacancy():
     
 
 #test_initializeGrid()
-#test_checkVictory()
+test_checkVictory()
 #test_buildGrid()
 #test_checkFull()
 #test_findVacancy()
