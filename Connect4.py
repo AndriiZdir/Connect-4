@@ -29,7 +29,7 @@ def newPiece(grid,col,piece):
 
             
 
-def checkVictory(grid):
+def checkVictory(grid,piece):
     #check column
     for col in range(7):
         print grid[col]
@@ -37,10 +37,10 @@ def checkVictory(grid):
             x=0
             for y in range(4):
                 if row>2:
-                    if grid[col][row] == grid[col][row-y] and grid[col][row]== "X":
+                    if grid[col][row] == grid[col][row-y] and grid[col][row]==piece:
                         x+=1
                 else:
-                    if grid[col][row] == grid[col][row+y] and grid[col][row]== "X":
+                    if grid[col][row] == grid[col][row+y] and grid[col][row]== piece:
                         x+=1
                 if x == 4:
                     return True;
@@ -109,12 +109,13 @@ def test_newPiece():
     #print grid
 
 def test_checkVictory():
+    P1 = "X"
     grid=[[" "," "," "," "," "," "],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
     #row=checkVictory(grid)
     #print row
     grid=[[" "," "," "," "," "," "],[" "," "," ","X","X","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," ","X","X","X","X"],[" "," "," "," "," "," "]]
-    #col = checkVictory(grid)
-    #print col
+    col = checkVictory(grid,P1)
+    print col
     grid = [[" "," "," "," "," ","X"],[" "," "," "," ","X"," "],[" "," "," ","X"," "," "],[" "," ","X"," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
     #upDiag = checkVictory(grid)
     #print upDiag
@@ -164,6 +165,6 @@ test_checkVictory()
 #test_buildGrid()
 #test_checkFull()
 #test_findVacancy()
-test_newPiece()
+#test_newPiece()
 #test_getColumn()
 
