@@ -16,9 +16,18 @@ def getColumn():
            return column;
        
 def newPiece(grid,col,piece):
-    #idk how to change a specific character in one list
-    grid[col] = 'X'
-    
+    #help from mac
+    t = 5
+    for y in range(6):
+        if grid[col][t] == " ":
+            grid[col][t] = piece
+            print grid[col]
+            return;
+            
+        else:
+            t-=1
+
+            
 
 def checkVictory (grid):
     pass
@@ -63,23 +72,23 @@ def test_getColumn():
     print (column)
 
 def test_newPiece():
-    grid = [[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
+    grid = [[" "," "," "," "," "," "],[" "," "," "," "," ","O"],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
     P1 = "X"
     P2 = "O"
-    newPiece(grid,1,P1)
-    print grid
-    newPiece(grid,2,P2)
-    print grid
-    newPiece(grid,3,P1)
-    print grid
-    newPiece(grid,4,P2)
-    print grid
-    newPiece(grid,5,P1)
-    print grid
-    newPiece(grid,6,P2)
-    print grid
-    newPiece(grid,7,P1)
-    print grid
+    newPiece(grid,0,P1)
+    
+    newPiece(grid,1,P2)
+    #print grid
+    newPiece(grid,2,P1)
+    #print grid
+    newPiece(grid,3,P2)
+    #print grid
+    newPiece(grid,4,P1)
+    #print grid
+    newPiece(grid,5,P2)
+    #print grid
+    newPiece(grid,6,P1)
+    #print grid
 
 def test_checkVictory():
     grid=[[" "," "," "," "," "," "],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," ","X"],[" "," "," "," "," "," "],[" "," "," "," "," "," "]]
@@ -136,6 +145,6 @@ def test_findVacancy():
 #test_buildGrid()
 #test_checkFull()
 #test_findVacancy()
-#test_newPiece()
+test_newPiece()
 #test_getColumn()
 
