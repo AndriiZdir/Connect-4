@@ -12,24 +12,29 @@ def getColumn():
         elif int(answer) < 1:
             print('Too low')
         else:
+            ## Oops -- are you sure you want to return the column as a
+            ## string? -- TH
            column = answer
            return column;
        
 def newPiece(grid,col,piece):
     #help from mac
     t = 5
+    ## this should work, but it's inelegant and risky to have the
+    ## relationship between t=5 and range(6) not made explicit (also,
+    ## it's not clear to me what "t" is supposed to stand for -- try
+    ## to use meaningful variable names. -- TH
     for y in range(6):
         if grid[col][t] == " ":
             grid[col][t] = piece
             print grid[col]
-            return;
-            
+            return;            
         else:
             t-=1
 
-            
-
 def checkVictory(grid,piece):
+    ## It seems like you could significantly simplify the logic
+    ## here. -- TH.
     #check column
     for col in range(7):
         print grid[col]
@@ -66,7 +71,9 @@ def buildGrid(grid):
         print "|"
         print"_____________________________"
             
-        
+
+## It looks like the function below is nearly identical to CheckFull,
+## no? Why implement the logic twice?
 def findVacancy(grid, col):
     '''Return True if there is a vacancy in column col of grid.'''
     if ' ' in grid[col]:  
@@ -75,10 +82,6 @@ def findVacancy(grid, col):
     else:
         print('No space')
         return False
-
-
-
-
 
     
 def test_initializeGrid():
@@ -160,11 +163,11 @@ def test_findVacancy():
         print "doesn't work when it is full"
     
 
-#test_initializeGrid()
+test_initializeGrid()
 test_checkVictory()
-#test_buildGrid()
-#test_checkFull()
-#test_findVacancy()
-#test_newPiece()
-#test_getColumn()
+test_buildGrid()
+test_checkFull()
+test_findVacancy()
+test_newPiece()
+test_getColumn()
 
